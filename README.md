@@ -96,3 +96,22 @@ Dall'analisi delle \*\*9.995 righe\*\* del dataset ATS, emergono le seguenti cri
 
 3\. \*\*Bilanciamento per i Software Engineer:\*\* Introdurre una task asincrona leggera e automatizzata (es. test di logica o coding rapido) per filtrare i candidati prima di impegnare i Senior Engineer nelle interviste live.
 
+
+## 🧹 1. Metti in Ordine: Data Cleaning & Metriche Chiave
+
+### A. Data Cleaning (Processo di pulizia dei dati)
+Il dataset grezzo esportato dall'ATS presentava diverse incoerenze strutturali che sono state corrette per garantire l'affidabilità dell'analisi:
+1. **Normalizzazione dei Ruoli:** Sono state uniformate le nomenclature duplicate generate nel sistema (es. fusione del ruolo `SWE` in `Software Engineer` e di `Business Development Representative` in `BDR`).
+2. **Standardizzazione Temporale:** Le date di candidatura e di fine processo sono state convertite in formato standard (`YYYY-MM-DD`) per calcolare con precisione i tempi di attraversamento (*Time-in-Stage* e *Time-to-Hire*).
+3. **Gestione dei Valori Mancanti:** Sono stati isolati e trattati i record incompleti o con timestamp anomali per evitare distorsioni nei tassi di conversione.
+4. **Segmentazione per Categoria:** Il perimetro è stato diviso seguendo le regole di business di Jet HR:
+   * *Ruoli Chiusi:* Web Designer e Chief of Staff (processi conclusi durante l'anno, senza screening iniziale).
+   * *Ruoli Sempre Aperti:* Tutti gli altri ruoli.
+   * *Eccezioni di Funnel:* Software Engineer (privi di task tecnica) e Product Designer (task post-prima intervista).
+
+### B. KPI (Metriche Essenziali Calcolate)
+Per valutare l'efficacia e l'efficienza dei processi di selezione sul totale dei **9.995 record** analizzati, sono stati monitorati i seguenti indicatori:
+* **Pass-Through Rate (Conversion Rate):** Percentuale di candidati che superano con successo una specifica fase per accedere alla successiva, evidenziando i punti di sbarramento critici.
+* **Drop-off Rate:** Tasso di abbandono o scarto dei candidati per singolo step, utile a quantificare l'attrito del funnel.
+* **Time-in-Stage / Time-to-Hire:** Durata media in giorni trascorsa dai candidati in ogni fase e durata complessiva del processo fino allo status finale (`Hired`, `Rejected`, `Dropped`, `Active`).
+
