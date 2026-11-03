@@ -115,3 +115,26 @@ Per valutare l'efficacia e l'efficienza dei processi di selezione sul totale dei
 * **Drop-off Rate:** Tasso di abbandono o scarto dei candidati per singolo step, utile a quantificare l'attrito del funnel.
 * **Time-in-Stage / Time-to-Hire:** Durata media in giorni trascorsa dai candidati in ogni fase e durata complessiva del processo fino allo status finale (`Hired`, `Rejected`, `Dropped`, `Active`).
 
+## 🔍 2. Analisi del Funnel e Colli di Bottiglia (Approfondimento)
+
+Analizzando i dati dei processi di selezione, emergono dinamiche differenti a seconda della categoria di ruolo:
+
+1. **Ruoli Standard (Screening -> Task -> 3 Interviste):**
+   * *Il problema:* Questo funnel è il più pesante. La presenza di ben 3 interviste successive alla task genera un **drop-off cumulativo elevatissimo**. I candidati migliori ricevono offerte altrove prima di superare l'ultimo step.
+   * *Collo di bottiglia:* Le fasi finali di colloquio allungano il *Time-to-Hire* in modo ingiustificato.
+
+2. **Web Designer & Chief of Staff (Ruoli Chiusi):**
+   * *Il problema:* L'assenza di screening iniziale e l'invio immediato della Task sovraccaricano il team di recruiting. Vengono corrette task di candidati che non possiedono le competenze di base riscontrabili da un rapido controllo del CV.
+
+3. **Product Designer (Task dopo la 1ª Interview, 2 Interviste totali):**
+   * *Il punto di forza:* Strutturalmente è più snello (sole 2 interviste). Tuttavia, manca un filtro iniziale (screening), il che significa che la prima intervista viene sprecata talvolta con candidati non idonei.
+
+4. **Software Engineer (Senza Task, alto volume):**
+   * *Il problema:* Essendo il ruolo con più candidature nel dataset, l'assenza di una task tecnica asincrona sposta tutto il carico di lavoro sulle spalle dei Technical Interviewer, rallentando drasticamente la pipeline e creando un collo di bottiglia insostenibile per i senior engineer.
+
+---
+
+## 🎯 3. Valutazione del Sistema di Valutazione
+- I dati evidenziano un disallineamento tra le valutazioni iniziali (CV) e l'effettivo superamento delle fasi successive, segno di criteri di screening non sufficientemente standardizzati.
+- Gli step attuali in alcuni ruoli creano attrito e frustrazione nei candidati, allungando i tempi senza aggiungere valore predittivo sull'effettiva performance lavorativa.
+
